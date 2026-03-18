@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BenefitCard from '../components/BenefitCard.astro';
+import BlogPostCard from '../components/BlogPostCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "christliches-event.de",
+  "url": "https://christliches-event.de",
+  "description": "Ihr unabhängiger Ratgeber für christliche Gemeinde-Events – von der Planung bis zur Durchführung.",
+};
+
+const blogPosts = [
+  {
+    title: "Gemeindefest planen: Die ultimative Checkliste",
+    description: "Gemeindefest organisieren von A-Z – Zeitplan, Budget, Programm-Ideen und Helfer-Koordination.",
+    slug: "gemeindefest-planen-checkliste",
+    image: "/images/blog/blog-planning-checklist.jpg",
+    imageAlt: "Checkliste für Gemeindefest-Planung",
+    pubDate: "2026-03-18",
+    tags: ["Gemeindefest", "Checkliste"],
+  },
+  {
+    title: "Konzert in Kirche organisieren: Komplette Anleitung",
+    description: "Kirchenkonzert planen leicht gemacht – GEMA, Technik, Werbung und die kostenlose Alternative.",
+    slug: "konzert-in-kirche-organisieren",
+    image: "/images/blog/blog-music-instruments.jpg",
+    imageAlt: "Musikinstrumente in einem Kirchenraum",
+    pubDate: "2026-03-18",
+    tags: ["Konzert", "Anleitung"],
+  },
+  {
+    title: "Warum ein Musical-Event Ihre Gemeinde verändern kann",
+    description: "Wie ein christliches Musical Ihre Gemeinde stärkt – Gemeinschaft fördern, neue Menschen erreichen.",
+    slug: "musical-event-gemeinde-veraendert",
+    image: "/images/blog/blog-church-community.jpg",
+    imageAlt: "Gemeinschaft in der Kirchengemeinde",
+    pubDate: "2026-03-18",
+    tags: ["Musical", "Gemeindeaufbau"],
+  },
+];
+---
+
+<BaseLayout
+  title="Christliches Event für Ihre Gemeinde planen"
+  description="Ihr unabhängiger Ratgeber für christliche Gemeinde-Events. Planen Sie Konzerte, Gemeindefeste und Musical-Abende – mit Praxis-Tipps und der kostenlosen Adonia-Option."
+  jsonLd={websiteJsonLd}
+>
+  <!-- Hero -->
+  <section class="relative bg-primary overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary-dark to-primary opacity-90"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
+      <div class="max-w-3xl">
+        <p class="text-secondary font-semibold mb-4 text-sm sm:text-base uppercase tracking-wider">
+          Ihr Ratgeber für Gemeinde-Events
+        </p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black font-[family-name:var(--font-heading)] text-white mb-6 leading-tight">
+          Ein Event, das Ihre Gemeinde <span class="text-secondary">nachhaltig verändert</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-white/80 mb-8 max-w-2xl leading-relaxed">
+          Entdecken Sie, wie Kirchengemeinden in ganz Deutschland mit professionellen Musical-Konzerten hunderte Menschen erreichen – kostenlos und ohne großen Aufwand.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/so-funktionierts" class="inline-flex items-center justify-center px-8 py-4 bg-secondary hover:bg-secondary-light text-white font-semibold rounded-lg transition-all text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+            So funktioniert's &rarr;
+          </a>
+          <a href="/blog" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all text-lg backdrop-blur-sm">
+            Ratgeber lesen
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points -->
+  <section class="py-16 sm:py-20 bg-bg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold font-[family-name:var(--font-heading)] text-primary mb-4">
+          Kennen Sie das auch?
+        </h2>
+        <p class="text-text-light text-lg max-w-2xl mx-auto">
+          Viele Gemeinden stehen vor denselben Herausforderungen – und wissen nicht, wo sie anfangen sollen.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <BenefitCard
+          icon="🔇"
+          title="Leere Bänke, wenig Resonanz"
+          text="Der Gottesdienst erreicht die Kerngemeinde, aber neue Menschen finden selten den Weg zu Ihnen. Die Gemeinde wird kleiner statt größer."
+        />
+        <BenefitCard
+          icon="💸"
+          title="Knappes Budget, großer Aufwand"
+          text="Ein professionelles Event scheint unbezahlbar. Und wer soll das alles organisieren? Die wenigen Ehrenamtlichen sind bereits am Limit."
+        />
+        <BenefitCard
+          icon="🧑‍🤝‍🧑"
+          title="Junge Menschen fehlen"
+          text="Die Jugendgruppe schrumpft, Konfirmanden verschwinden nach der Konfirmation. Wie erreicht man eine Generation, die mit Kirche wenig anfangen kann?"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="py-16 sm:py-20 bg-bg-alt">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-secondary font-semibold mb-3 text-sm uppercase tracking-wider">Die Lösung</p>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold font-[family-name:var(--font-heading)] text-primary mb-6">
+            Ein professionelles Musical-Konzert – kostenlos in Ihrer Gemeinde
+          </h2>
+          <p class="text-text-light text-lg mb-6 leading-relaxed">
+            Stellen Sie sich vor: 450 Menschen in Ihrem Gemeindesaal. 70 junge Musiker auf der Bühne. Ein abendfüllendes biblisches Musical mit Chor, Live-Band und Theater. Der Eintritt ist frei – und für Sie als Veranstalter fallen keine Kosten an.
+          </p>
+          <p class="text-text-light text-lg mb-8 leading-relaxed">
+            Das ist keine Fantasie, sondern Realität in über 250 Gemeinden jedes Jahr. Mit einem Partner wie Adonia e.V. wird Ihr Gemeinde-Event zum Erlebnis, das Menschen anzieht und verbindet.
+          </p>
+          <a href="/so-funktionierts" class="inline-flex items-center text-accent hover:text-accent-dark font-semibold text-lg transition-colors">
+            Erfahren Sie, wie es funktioniert &rarr;
+          </a>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-white">
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center text-accent font-bold shrink-0 mt-0.5">1</div>
+              <div>
+                <h3 class="font-semibold text-primary mb-1">Anfrage stellen</h3>
+                <p class="text-text-light text-sm">Kontaktieren Sie Adonia und nennen Sie Ihren Wunschtermin.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center text-accent font-bold shrink-0 mt-0.5">2</div>
+              <div>
+                <h3 class="font-semibold text-primary mb-1">Raum & Gastfamilien organisieren</h3>
+                <p class="text-text-light text-sm">Stellen Sie einen Raum mit 350+ Plätzen und Gastfamilien bereit.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center text-accent font-bold shrink-0 mt-0.5">3</div>
+              <div>
+                <h3 class="font-semibold text-primary mb-1">Werbung im Ort verteilen</h3>
+                <p class="text-text-light text-sm">Adonia liefert Plakate und Flyer – Sie verteilen sie.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center text-accent font-bold shrink-0 mt-0.5">4</div>
+              <div>
+                <h3 class="font-semibold text-primary mb-1">Konzertabend erleben</h3>
+                <p class="text-text-light text-sm">70 Musiker, professionelle Technik, begeisterte Besucher.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center text-accent font-bold shrink-0 mt-0.5">5</div>
+              <div>
+                <h3 class="font-semibold text-primary mb-1">Kontakte nachfassen</h3>
+                <p class="text-text-light text-sm">Laden Sie neue Gesichter zu Folgeangeboten ein.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="py-16 sm:py-20 bg-bg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold font-[family-name:var(--font-heading)] text-primary mb-4">
+          Zahlen, die überzeugen
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-16">
+        <div class="text-center bg-white rounded-2xl p-8 shadow-sm border border-bg-alt">
+          <div class="text-4xl sm:text-5xl font-black text-secondary mb-2">254+</div>
+          <p class="text-text-light font-medium">Konzerte pro Jahr</p>
+        </div>
+        <div class="text-center bg-white rounded-2xl p-8 shadow-sm border border-bg-alt">
+          <div class="text-4xl sm:text-5xl font-black text-secondary mb-2">450</div>
+          <p class="text-text-light font-medium">Besucher im Durchschnitt</p>
+        </div>
+        <div class="text-center bg-white rounded-2xl p-8 shadow-sm border border-bg-alt">
+          <div class="text-4xl sm:text-5xl font-black text-secondary mb-2">Seit 2001</div>
+          <p class="text-text-light font-medium">Bewährt in ganz Deutschland</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <TestimonialCard
+          quote="520 Besucher in unserer Turnhalle – mehr als bei jedem anderen Event in der Geschichte unserer Gemeinde."
+          author="Pastor M."
+          role="Evangelische Gemeinde, NRW"
+        />
+        <TestimonialCard
+          quote="Der Aufwand war überschaubar. Das Ergebnis stand in keinem Verhältnis zum Aufwand. So etwas machen wir jederzeit wieder."
+          author="Gemeindeleiter K."
+          role="Freie Gemeinde, Baden-Württemberg"
+        />
+        <TestimonialCard
+          quote="Die Gastfamilien waren nach dem Wochenende die größten Fans. Sie fragen schon, wann der nächste Chor kommt."
+          author="Pfarrerin S."
+          role="Landeskirche, Hessen"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Teaser -->
+  <section class="py-16 sm:py-20 bg-bg-alt">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold font-[family-name:var(--font-heading)] text-primary mb-4">
+          Praxis-Ratgeber für Ihre Gemeinde
+        </h2>
+        <p class="text-text-light text-lg max-w-2xl mx-auto">
+          Fundierte Leitfäden, Checklisten und Erfahrungsberichte für Ihre nächste Gemeindeveranstaltung.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        {blogPosts.map((post) => (
+          <BlogPostCard {...post} />
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="/blog" class="inline-flex items-center text-accent hover:text-accent-dark font-semibold text-lg transition-colors">
+          Alle Artikel ansehen &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

@@ -1,0 +1,94 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: '/', label: 'Start' },
+  { href: '/so-funktionierts', label: 'So funktioniert\'s' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+---
+
+<header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <span class="text-xl sm:text-2xl font-bold font-[family-name:var(--font-heading)] text-primary group-hover:text-primary-light transition-colors">
+          christliches-event<span class="text-secondary">.de</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-1">
+        {navItems.map(({ href, label }) => (
+          <a
+            href={href}
+            class:list={[
+              'px-4 py-2 rounded-lg text-base font-medium transition-colors',
+              currentPath === href || (href !== '/' && currentPath.startsWith(href))
+                ? 'text-primary bg-bg-alt'
+                : 'text-text-light hover:text-primary hover:bg-bg-alt/50',
+            ]}
+          >
+            {label}
+          </a>
+        ))}
+        <a
+          href="/kontakt"
+          class="ml-3 px-5 py-2.5 bg-secondary hover:bg-secondary-dark text-white font-semibold rounded-lg transition-colors text-base"
+        >
+          Konzert anfragen
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 rounded-lg text-text-light hover:text-primary hover:bg-bg-alt transition-colors"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col gap-1">
+        {navItems.map(({ href, label }) => (
+          <a
+            href={href}
+            class:list={[
+              'px-4 py-3 rounded-lg text-base font-medium transition-colors',
+              currentPath === href || (href !== '/' && currentPath.startsWith(href))
+                ? 'text-primary bg-bg-alt'
+                : 'text-text-light hover:text-primary hover:bg-bg-alt/50',
+            ]}
+          >
+            {label}
+          </a>
+        ))}
+        <a
+          href="/kontakt"
+          class="mt-2 px-5 py-3 bg-secondary hover:bg-secondary-dark text-white font-semibold rounded-lg transition-colors text-center text-base"
+        >
+          Konzert anfragen
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+</script>

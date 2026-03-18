@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout
+  title="Kontakt – Adonia-Konzert anfragen"
+  description="Stellen Sie eine Anfrage für ein kostenloses Adonia-Musical-Konzert in Ihrer Gemeinde. Direkt bei Adonia e.V. anfragen."
+>
+  <section class="bg-primary py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: 'Kontakt' }]} />
+      <div class="mt-6 max-w-3xl">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black font-[family-name:var(--font-heading)] text-white mb-6 leading-tight">
+          Konzert <span class="text-secondary">anfragen</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-white/80 leading-relaxed">
+          Sie möchten ein Adonia-Konzert in Ihren Ort holen? Hier erfahren Sie, wie Sie Kontakt aufnehmen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-20 bg-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-bg-alt text-center">
+        <div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">🎵</div>
+        <h2 class="text-2xl sm:text-3xl font-bold font-[family-name:var(--font-heading)] text-primary mb-4">
+          Direkt bei Adonia anfragen
+        </h2>
+        <p class="text-text-light text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+          Die Konzertplanung läuft direkt über Adonia e.V. Auf der Adonia-Website können Sie unverbindlich Ihr Interesse anmelden und alle Details besprechen.
+        </p>
+        <a
+          href="https://www.adonia.de/konzerte/konzert-veranstalten"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center px-8 py-4 bg-secondary hover:bg-secondary-dark text-white font-semibold rounded-lg transition-all text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+        >
+          Konzert bei Adonia anfragen &rarr;
+        </a>
+        <p class="text-text-light text-sm mt-4">
+          Sie werden zu adonia.de weitergeleitet.
+        </p>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="bg-bg-alt rounded-2xl p-6">
+          <h3 class="font-bold text-primary mb-2">Fragen zur Website?</h3>
+          <p class="text-text-light text-sm mb-3">
+            christliches-event.de ist ein unabhängiges Informationsportal. Für Fragen zu unseren Inhalten:
+          </p>
+          <a href="mailto:info@christliches-event.de" class="text-accent hover:text-accent-dark underline font-medium text-sm">
+            info@christliches-event.de
+          </a>
+        </div>
+        <div class="bg-bg-alt rounded-2xl p-6">
+          <h3 class="font-bold text-primary mb-2">Noch unsicher?</h3>
+          <p class="text-text-light text-sm mb-3">
+            Lesen Sie unsere FAQ oder stöbern Sie in unseren Praxis-Ratgebern.
+          </p>
+          <div class="flex gap-4">
+            <a href="/faq" class="text-accent hover:text-accent-dark underline font-medium text-sm">FAQ lesen</a>
+            <a href="/blog" class="text-accent hover:text-accent-dark underline font-medium text-sm">Blog lesen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

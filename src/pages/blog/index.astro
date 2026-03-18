@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BlogPostCard from '../../components/BlogPostCard.astro';
+
+const posts = [
+  {
+    title: "Gemeindefest planen: Die ultimative Checkliste mit Ideen und Tipps",
+    description: "Gemeindefest organisieren von A-Z – Zeitplan, Budget, Programm-Ideen, Motto-Vorschläge und Helfer-Koordination.",
+    slug: "gemeindefest-planen-checkliste",
+    image: "/images/blog/blog-planning-checklist.jpg",
+    imageAlt: "Checkliste und Planung für ein Gemeindefest",
+    pubDate: "2026-03-18",
+    tags: ["Gemeindefest", "Checkliste"],
+  },
+  {
+    title: "Konzert in Kirche organisieren: Komplette Anleitung für Gemeinden",
+    description: "Kirchenkonzert planen leicht gemacht – Schritt-für-Schritt für Pastoren & Gemeindeleiter.",
+    slug: "konzert-in-kirche-organisieren",
+    image: "/images/blog/blog-music-instruments.jpg",
+    imageAlt: "Musikinstrumente in einem Kirchenraum",
+    pubDate: "2026-03-18",
+    tags: ["Konzert", "Anleitung"],
+  },
+  {
+    title: "GEMA-Regeln für Kirchengemeinden: Der komplette Praxis-Guide",
+    description: "GEMA für Kirchen einfach erklärt – Evangelisch vs. Katholisch vs. Freikirche. Kosten, Anmeldung, Streaming.",
+    slug: "gema-regeln-kirchengemeinden",
+    image: "/images/blog/blog-documents-legal.jpg",
+    imageAlt: "Dokumente und Stift auf einem Schreibtisch",
+    pubDate: "2026-03-18",
+    tags: ["GEMA", "Recht"],
+  },
+  {
+    title: "10 Wege, wie Ihre Gemeinde junge Menschen wieder erreicht",
+    description: "Jugendarbeit neu denken – 10 bewährte Strategien für Pastoren und Jugendleiter.",
+    slug: "junge-menschen-gemeinde-erreichen",
+    image: "/images/blog/blog-teens-youth.jpg",
+    imageAlt: "Gruppe junger Menschen lacht zusammen",
+    pubDate: "2026-03-18",
+    tags: ["Jugendarbeit", "Gemeinde"],
+  },
+  {
+    title: "Warum ein Musical-Event Ihre Gemeinde verändern kann",
+    description: "Wie ein christliches Musical Ihre Gemeinde stärkt – Gemeinschaft fördern, neue Menschen erreichen.",
+    slug: "musical-event-gemeinde-veraendert",
+    image: "/images/blog/blog-church-community.jpg",
+    imageAlt: "Gemeinschaft in der Kirchengemeinde",
+    pubDate: "2026-03-18",
+    tags: ["Musical", "Gemeindeaufbau"],
+  },
+];
+---
+
+<BaseLayout
+  title="Blog – Ratgeber für christliche Gemeinde-Events"
+  description="Praxis-Ratgeber für Kirchengemeinden: Gemeindefest planen, Konzerte organisieren, GEMA verstehen, Jugendarbeit neu denken."
+>
+  <section class="bg-primary py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: 'Blog' }]} />
+      <div class="mt-6 max-w-3xl">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black font-[family-name:var(--font-heading)] text-white mb-6 leading-tight">
+          Praxis-Ratgeber für <span class="text-secondary">Ihre Gemeinde</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-white/80 leading-relaxed">
+          Fundierte Leitfäden, Checklisten und Erfahrungsberichte für erfolgreiche Gemeindeveranstaltungen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-20 bg-bg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {posts.map((post) => (
+          <BlogPostCard {...post} />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

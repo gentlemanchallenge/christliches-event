@@ -1,0 +1,89 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    pubDate: string;
+    author: string;
+    tags: string[];
+    image: string;
+    imageAlt: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+const slug = Astro.url.pathname.replace('/blog/', '').replace(/\/$/, '');
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": frontmatter.title,
+  "description": frontmatter.description,
+  "image": `https://christliches-event.de${frontmatter.image}`,
+  "datePublished": frontmatter.pubDate,
+  "author": {
+    "@type": "Organization",
+    "name": frontmatter.author,
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "christliches-event.de",
+    "url": "https://christliches-event.de",
+  },
+};
+---
+
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  ogImage={frontmatter.image}
+  ogType="article"
+  article={{
+    publishedTime: frontmatter.pubDate,
+    author: frontmatter.author,
+    tags: frontmatter.tags,
+  }}
+  jsonLd={articleJsonLd}
+>
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div class="mb-6">
+      <Breadcrumbs items={[
+        { label: 'Blog', href: '/blog' },
+        { label: frontmatter.title },
+      ]} />
+    </div>
+
+    <header class="mb-8 sm:mb-12">
+      <div class="flex flex-wrap gap-2 mb-4">
+        {frontmatter.tags.map((tag) => (
+          <span class="px-3 py-1 bg-bg-alt text-text-light text-sm rounded-full">{tag}</span>
+        ))}
+      </div>
+      <p class="text-sm text-text-light">
+        Veröffentlicht am {new Date(frontmatter.pubDate).toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' })}
+        &middot; {frontmatter.author}
+      </p>
+    </header>
+
+    <div class="prose max-w-none">
+      <slot />
+    </div>
+
+    <footer class="mt-12 pt-8 border-t border-bg-alt">
+      <div class="bg-bg-alt rounded-2xl p-6 sm:p-8 text-center">
+        <h3 class="text-xl sm:text-2xl font-bold font-[family-name:var(--font-heading)] text-primary mb-3">
+          Bereit für ein unvergessliches Gemeinde-Event?
+        </h3>
+        <p class="text-text-light mb-5 max-w-xl mx-auto">
+          Erfahren Sie, wie Sie kostenlos ein professionelles Musical-Konzert in Ihre Gemeinde holen.
+        </p>
+        <a href="/so-funktionierts" class="inline-block px-6 py-3 bg-secondary hover:bg-secondary-dark text-white font-semibold rounded-lg transition-colors">
+          So funktioniert's &rarr;
+        </a>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>

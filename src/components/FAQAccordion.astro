@@ -1,0 +1,25 @@
+---
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: FAQItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="space-y-3">
+  {items.map((item) => (
+    <details class="bg-white rounded-xl border border-bg-alt overflow-hidden group">
+      <summary class="flex items-center justify-between gap-4 p-5 sm:p-6 font-semibold text-primary text-base sm:text-lg cursor-pointer hover:bg-bg-alt/30 transition-colors">
+        <span class="flex-1">{item.question}</span>
+      </summary>
+      <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-text-light leading-relaxed">
+        <Fragment set:html={item.answer} />
+      </div>
+    </details>
+  ))}
+</div>

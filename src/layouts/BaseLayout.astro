@@ -1,0 +1,46 @@
+---
+import SEOHead from '../components/SEOHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  article?: {
+    publishedTime?: string;
+    author?: string;
+    tags?: string[];
+  };
+  noindex?: boolean;
+  jsonLd?: object;
+}
+
+const { title, description, canonical, ogImage, ogType, article, noindex, jsonLd } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <SEOHead
+    title={title}
+    description={description}
+    canonical={canonical}
+    ogImage={ogImage}
+    ogType={ogType}
+    article={article}
+    noindex={noindex}
+  />
+  {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+</head>
+<body class="min-h-screen flex flex-col">
+  <Header />
+  <main class="flex-1">
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>

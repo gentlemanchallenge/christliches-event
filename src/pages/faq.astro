@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const faqItems = [
+  {
+    question: "Was kostet ein Adonia-Konzert für unsere Gemeinde?",
+    answer: "<p>Nichts. Der Chor, die Band, die Technik und das Werbematerial kommen komplett kostenlos. Der Eintritt für Besucher ist frei – am Ende wird eine freiwillige Kollekte gesammelt, die der Adonia-Jugendarbeit zugutekommt. Sie als Gemeinde stellen lediglich den Raum, die Verpflegung für ca. 70 Personen und bei Teens-Konzerten Gastfamilien für eine Übernachtung.</p>",
+  },
+  {
+    question: "Wie kann ich ein Adonia-Konzert buchen?",
+    answer: "<p>Melden Sie Ihr Interesse direkt bei Adonia über <a href='https://www.adonia.de/konzerte/konzert-veranstalten' target='_blank' rel='noopener' class='text-accent underline'>adonia.de</a> oder kontaktieren Sie die Ansprechpartner per E-Mail. Nennen Sie Ihren Wunschtermin, den verfügbaren Raum und die gewünschte Konzertart (Teens oder Junior). Die Planung beginnt in der Regel ein Jahr im Voraus – je früher Sie anfragen, desto besser.</p>",
+  },
+  {
+    question: "Welche Raumvoraussetzungen brauchen wir?",
+    answer: "<p>Sie benötigen einen Raum mit mindestens 350 Sitzplätzen und einer Bühnenfläche von ca. 10 x 7 Metern. Das kann eine Kirche, ein Gemeindesaal, eine Schul-Aula oder eine Turnhalle sein. Ausreichend Stromanschlüsse müssen vorhanden sein. Adonia bringt die komplette Ton- und Lichttechnik mit.</p>",
+  },
+  {
+    question: "Müssen wir uns um GEMA kümmern?",
+    answer: "<p>In der Regel nicht. Adonia arbeitet überwiegend mit eigenen Kompositionen aus dem Adonia Verlag. Die GEMA-Frage ist daher normalerweise unkompliziert. Klären Sie die Details direkt mit Adonia – für Sie als Veranstalter fällt in der Regel kein GEMA-Aufwand an. Mehr zum Thema GEMA erfahren Sie in unserem <a href='/blog/gema-regeln-kirchengemeinden' class='text-accent underline'>GEMA-Ratgeber</a>.</p>",
+  },
+  {
+    question: "Ist das für jede Konfession geeignet?",
+    answer: "<p>Ja. Adonia-Konzerte finden in evangelischen Landeskirchen, katholischen Pfarrgemeinden und freikirchlichen Gemeinden gleichermaßen statt. Die biblischen Musicals sprechen konfessionsübergreifend an und eignen sich auch hervorragend für ökumenische Veranstaltungen.</p>",
+  },
+  {
+    question: "Wie viel Vorbereitungszeit müssen wir einplanen?",
+    answer: "<p>Planen Sie insgesamt ca. 12 Monate Vorlauf ein. Die aktive Vorbereitungsphase (Gastfamilien suchen, Werbung verteilen, Logistik klären) umfasst etwa 2–3 Monate. Der Organisationsaufwand ist überschaubar: Ein kleines Planungsteam von 3–5 Personen genügt. <a href='/so-funktionierts' class='text-accent underline'>Hier finden Sie den detaillierten Ablauf</a>.</p>",
+  },
+  {
+    question: "Wie können wir möglichst viele Besucher anziehen?",
+    answer: "<p>Der wichtigste Kanal ist die <strong>persönliche Einladung</strong> durch Gemeindemitglieder an Nachbarn, Kollegen und Freunde. Ergänzen Sie mit Plakaten in Geschäften, einem Facebook-Event, einer Pressemitteilung an die Lokalzeitung und Flyern in Schulen und Kindergärten. Erfahrungsgemäß kommen im Durchschnitt 450 Besucher pro Konzert.</p>",
+  },
+  {
+    question: "Können Jugendliche aus unserer Gemeinde bei Adonia mitmachen?",
+    answer: "<p>Ja! Adonia veranstaltet jedes Jahr über 70 Musicalcamps für Kinder und Jugendliche zwischen 9 und 19 Jahren. Die Teilnahme steht allen offen – auch Jugendlichen, die keiner Gemeinde angehören. Ein Camp ist ein intensives Gemeinschafts- und Glaubenserlebnis. Alle Informationen zu den Camps finden Sie auf <a href='https://www.adonia.de' target='_blank' rel='noopener' class='text-accent underline'>adonia.de</a>.</p>",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map((item) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer.replace(/<[^>]*>/g, ''),
+    },
+  })),
+};
+---
+
+<BaseLayout
+  title="Häufige Fragen – Adonia-Konzert veranstalten"
+  description="FAQ: Alles über Kosten, Ablauf, Raumvoraussetzungen, GEMA und Buchung eines kostenlosen Adonia-Konzerts in Ihrer Gemeinde."
+  jsonLd={faqJsonLd}
+>
+  <section class="bg-primary py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: 'FAQ' }]} />
+      <div class="mt-6 max-w-3xl">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black font-[family-name:var(--font-heading)] text-white mb-6 leading-tight">
+          Häufig gestellte <span class="text-secondary">Fragen</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-white/80 leading-relaxed">
+          Antworten auf die wichtigsten Fragen rund um die Veranstaltung eines Adonia-Konzerts in Ihrer Gemeinde.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-20 bg-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQAccordion items={faqItems} />
+      <p class="text-center text-text-light mt-10">
+        Ihre Frage ist nicht dabei? <a href="/kontakt" class="text-accent hover:text-accent-dark underline font-medium">Kontaktieren Sie uns</a> – wir helfen gern.
+      </p>
+    </div>
+  </section>
+
+  <CTABanner variant="secondary" />
+</BaseLayout>

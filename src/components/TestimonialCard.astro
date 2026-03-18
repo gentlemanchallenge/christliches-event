@@ -1,0 +1,23 @@
+---
+interface Props {
+  quote: string;
+  author: string;
+  role: string;
+}
+
+const { quote, author, role } = Astro.props;
+---
+
+<blockquote class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-bg-alt">
+  <div class="text-secondary text-4xl leading-none mb-3">&ldquo;</div>
+  <p class="text-text leading-relaxed mb-4 italic">{quote}</p>
+  <footer class="flex items-center gap-3">
+    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-sm">
+      {author.split(' ').map(n => n[0]).join('')}
+    </div>
+    <div>
+      <cite class="not-italic font-semibold text-primary text-sm">{author}</cite>
+      <p class="text-text-light text-xs">{role}</p>
+    </div>
+  </footer>
+</blockquote>

@@ -1,0 +1,48 @@
+---
+interface Props {
+  title?: string;
+  text?: string;
+  buttonText?: string;
+  buttonHref?: string;
+  variant?: 'primary' | 'secondary';
+}
+
+const {
+  title = 'Bereit für ein unvergessliches Gemeinde-Event?',
+  text = 'Erfahren Sie in 5 Minuten, wie Sie ein kostenloses Musical-Konzert mit 450 Besuchern in Ihre Gemeinde holen.',
+  buttonText = 'So funktioniert\'s →',
+  buttonHref = '/so-funktionierts',
+  variant = 'primary',
+} = Astro.props;
+---
+
+<section class:list={[
+  'py-16 sm:py-20',
+  variant === 'primary' ? 'bg-primary text-white' : 'bg-bg-alt',
+]}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class:list={[
+      'text-2xl sm:text-3xl lg:text-4xl font-bold font-[family-name:var(--font-heading)] mb-4',
+      variant === 'primary' ? 'text-white' : 'text-primary',
+    ]}>
+      {title}
+    </h2>
+    <p class:list={[
+      'text-lg mb-8 max-w-2xl mx-auto',
+      variant === 'primary' ? 'text-white/80' : 'text-text-light',
+    ]}>
+      {text}
+    </p>
+    <a
+      href={buttonHref}
+      class:list={[
+        'inline-block px-8 py-4 font-semibold rounded-lg transition-all text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5',
+        variant === 'primary'
+          ? 'bg-secondary hover:bg-secondary-light text-white'
+          : 'bg-primary hover:bg-primary-light text-white',
+      ]}
+    >
+      {buttonText}
+    </a>
+  </div>
+</section>

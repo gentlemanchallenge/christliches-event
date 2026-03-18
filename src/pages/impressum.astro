@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout
+  title="Impressum"
+  description="Impressum von christliches-event.de – Angaben gemäß § 5 DDG."
+  noindex={true}
+>
+  <section class="bg-primary py-12 sm:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: 'Impressum' }]} />
+      <h1 class="mt-4 text-3xl sm:text-4xl font-bold font-[family-name:var(--font-heading)] text-white">Impressum</h1>
+    </div>
+  </section>
+
+  <section class="py-12 sm:py-16 bg-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose">
+      <h2>Angaben gemäß § 5 DDG</h2>
+
+      <h3>Verantwortlich</h3>
+      <p>
+        Jonathan Enns<br />
+        c/o Impressumservice Dein-Impressum<br />
+        Stettiner Straße 41<br />
+        35410 Hungen
+      </p>
+
+      <h3>Kontakt</h3>
+      <p>
+        Telefon: 06183-8039368<br />
+        E-Mail: info@christliches-event.de
+      </p>
+
+      <h3>Redaktionell verantwortlich</h3>
+      <p>Jonathan Enns (Anschrift wie oben)</p>
+
+      <h2>Haftungsausschluss</h2>
+
+      <h3>Haftung für Inhalte</h3>
+      <p>
+        Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+      </p>
+
+      <h3>Haftung für Links</h3>
+      <p>
+        Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+      </p>
+
+      <h3>Urheberrecht</h3>
+      <p>
+        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+      </p>
+
+      <h2>Hinweis</h2>
+      <p>
+        christliches-event.de ist ein unabhängiges Informationsportal und keine offizielle Seite von Adonia e.V. Wir empfehlen Adonia als Partner für Gemeinde-Events auf Basis eigener Überzeugung und öffentlich zugänglicher Informationen.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

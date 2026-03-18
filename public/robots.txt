@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://christliches-event.de/sitemap-index.xml

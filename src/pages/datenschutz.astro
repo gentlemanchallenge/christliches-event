@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout
+  title="Datenschutzerklärung"
+  description="Datenschutzerklärung von christliches-event.de – Informationen zur Verarbeitung personenbezogener Daten."
+  noindex={true}
+>
+  <section class="bg-primary py-12 sm:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: 'Datenschutz' }]} />
+      <h1 class="mt-4 text-3xl sm:text-4xl font-bold font-[family-name:var(--font-heading)] text-white">Datenschutzerklärung</h1>
+    </div>
+  </section>
+
+  <section class="py-12 sm:py-16 bg-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose">
+      <h2>1. Verantwortlicher</h2>
+      <p>
+        Jonathan Enns<br />
+        c/o Impressumservice Dein-Impressum<br />
+        Stettiner Straße 41<br />
+        35410 Hungen<br />
+        E-Mail: info@christliches-event.de
+      </p>
+
+      <h2>2. Allgemeines zur Datenverarbeitung</h2>
+      <p>
+        Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website wurde bewusst datensparsam gestaltet. Wir erheben so wenig personenbezogene Daten wie möglich.
+      </p>
+
+      <h2>3. Hosting</h2>
+      <p>
+        Diese Website wird auf einem eigenen Virtual Private Server (VPS) in Deutschland gehostet. Beim Besuch der Website werden automatisch Informationen in sogenannten Server-Logfiles gespeichert, die Ihr Browser übermittelt. Dies umfasst: Browsertyp und -version, verwendetes Betriebssystem, Referrer-URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und IP-Adresse.
+      </p>
+      <p>
+        Diese Daten werden nicht mit anderen Datenquellen zusammengeführt. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem fehlerfreien Betrieb der Website). Server-Logfiles werden nach 14 Tagen automatisch gelöscht.
+      </p>
+
+      <h2>4. Webanalyse mit Umami</h2>
+      <p>
+        Wir verwenden Umami, eine datenschutzfreundliche, selbst gehostete Webanalyse-Software. Umami speichert keine personenbezogenen Daten, verwendet keine Cookies und erfasst keine IP-Adressen. Die Analyse erfolgt vollständig anonymisiert auf unserem eigenen Server in Deutschland.
+      </p>
+      <p>
+        Da Umami keine personenbezogenen Daten verarbeitet, ist kein Cookie-Banner erforderlich. Die Nutzung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der statistischen Analyse der Website-Nutzung).
+      </p>
+
+      <h2>5. SSL-Verschlüsselung</h2>
+      <p>
+        Diese Seite nutzt aus Sicherheitsgründen eine SSL-Verschlüsselung (HTTPS). Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
+      </p>
+
+      <h2>6. Externe Links</h2>
+      <p>
+        Diese Website enthält Links zu externen Websites (insbesondere adonia.de). Beim Klick auf einen externen Link verlassen Sie unsere Website. Für die Datenschutzpraktiken externer Websites sind wir nicht verantwortlich. Bitte informieren Sie sich über die Datenschutzerklärungen der jeweiligen Anbieter.
+      </p>
+
+      <h2>7. Google Fonts</h2>
+      <p>
+        Diese Website verwendet die Schriftarten „Inter" und „Merriweather" von Google Fonts. Die Schriften werden über die Server von Google geladen. Dabei wird Ihre IP-Adresse an Google übermittelt. Weitere Informationen finden Sie in der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-accent underline">Datenschutzerklärung von Google</a>. Die Nutzung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einheitlichen Darstellung der Schriftarten).
+      </p>
+
+      <h2>8. Ihre Rechte</h2>
+      <p>Sie haben folgende Rechte bezüglich Ihrer personenbezogenen Daten:</p>
+      <ul>
+        <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+        <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+        <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+        <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+        <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+        <li>Widerspruchsrecht (Art. 21 DSGVO)</li>
+      </ul>
+      <p>
+        Sie haben zudem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren.
+      </p>
+
+      <h2>9. Änderungen</h2>
+      <p>
+        Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um sie an veränderte Rechtslagen oder bei Änderungen unserer Website anzupassen. Die aktuelle Version finden Sie stets auf dieser Seite.
+      </p>
+
+      <p class="text-text-light text-sm mt-8">Stand: März 2026</p>
+    </div>
+  </section>
+</BaseLayout>

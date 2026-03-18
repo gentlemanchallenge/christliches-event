@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<BaseLayout
+  title="So funktioniert's – Ein Adonia-Konzert in Ihrer Gemeinde"
+  description="In 5 Schritten zum kostenlosen Musical-Konzert. Erfahren Sie, was Adonia e.V. ist, was Sie bereitstellen und wie der Ablauf funktioniert."
+>
+  <!-- Hero -->
+  <section class="bg-primary py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ label: "So funktioniert's" }]} />
+      <div class="mt-6 max-w-3xl">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black font-[family-name:var(--font-heading)] text-white mb-6 leading-tight">
+          So holen Sie ein kostenloses Konzert in <span class="text-secondary">Ihre Gemeinde</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-white/80 leading-relaxed">
+          Ein professionelles Musical-Konzert mit 70 jungen Musikern – komplett kostenlos. Klingt zu gut, um wahr zu sein? So funktioniert es.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Was ist Adonia -->
+  <section class="py-16 sm:py-20 bg-bg">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold font-[family-name:var(--font-heading)] text-primary mb-6">
+        Was ist Adonia e.V.?
+      </h2>
+      <p class="text-text-light text-lg mb-4 leading-relaxed">
+        Adonia e.V. ist ein gemeinnütziger Verein, der seit über 20 Jahren in ganz Deutschland und der Schweiz christliche Musical-Konzerte veranstaltet. Das Konzept ist einzigartig: Kinder und Jugendliche zwischen 9 und 19 Jahren studieren in einer Campwoche ein abendfüllendes biblisches Musical ein und gehen dann auf eine Mini-Tournee mit vier Konzerten an vier verschiedenen Orten.
+      </p>
+      <p class="text-text-light text-lg mb-4 leading-relaxed">
+        Jedes Jahr finden über 250 Konzerte mit insgesamt über 100.000 Besuchern statt. Der Eintritt ist immer frei – am Ende wird eine freiwillige Kollekte gesammelt, die der Adonia-Jugendarbeit zugutekommt.
+      </p>
+      <p class="text-text-light text-lg leading-relaxed">
+        Für Gemeinden ist das Modell besonders attraktiv: Sie erhalten ein professionelles Konzert mit Chor, Live-Band, Theater und eigener Technik – ohne dafür zu bezahlen. Sie stellen lediglich den Raum, die Verpflegung und bei Teens-Konzerten die Gastfamilien.
+      </p>
+    </div>
+  </section>
+
+  <!-- 5 Schritte -->
+  <section class="py-16 sm:py-20 bg-bg-alt">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold font-[family-name:var(--font-heading)] text-primary mb-4">
+          In 5 Schritten zum Konzert
+        </h2>
+        <p class="text-text-light text-lg">Von der ersten Idee bis zum Konzertabend – so läuft es ab.</p>
+      </div>
+
+      <div class="space-y-8">
+        <!-- Schritt 1 -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-bg-alt">
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0">1</div>
+            <div>
+              <h3 class="text-xl font-bold font-[family-name:var(--font-heading)] text-primary mb-2">Interesse anmelden (12+ Monate vorher)</h3>
+              <p class="text-text-light leading-relaxed mb-3">
+                Kontaktieren Sie Adonia über die Website oder direkt per E-Mail. Nennen Sie Ihren Wunschtermin, den verfügbaren Raum und ob Sie ein Teens-Musical (12–19 Jahre) oder ein Junior-Musical (9–13 Jahre) bevorzugen.
+              </p>
+              <p class="text-text-light leading-relaxed">
+                Je früher Sie anfragen, desto besser – beliebte Termine sind schnell vergeben. Die Planung beginnt in der Regel ein Jahr im Voraus.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Schritt 2 -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-bg-alt">
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0">2</div>
+            <div>
+              <h3 class="text-xl font-bold font-[family-name:var(--font-heading)] text-primary mb-2">Raum und Gastfamilien organisieren (6–8 Monate vorher)</h3>
+              <p class="text-text-light leading-relaxed mb-3">
+                Reservieren Sie einen Raum mit mindestens 350 Sitzplätzen und einer Bühne von etwa 10 x 7 Metern. Das kann Ihre Kirche, ein Gemeindesaal, eine Schul-Aula oder eine Turnhalle sein.
+              </p>
+              <p class="text-text-light leading-relaxed">
+                Bei Teens-Konzerten benötigen Sie 30–35 Gastfamilien, die jeweils 2–3 Jugendliche für eine Nacht aufnehmen. Starten Sie die Suche frühzeitig über Gottesdienst-Abkündigungen und den Gemeindebrief.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Schritt 3 -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-bg-alt">
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0">3</div>
+            <div>
+              <h3 class="text-xl font-bold font-[family-name:var(--font-heading)] text-primary mb-2">Werbung verteilen (6–4 Wochen vorher)</h3>
+              <p class="text-text-light leading-relaxed mb-3">
+                Adonia liefert professionelle Plakate und Flyer kostenlos. Ihre Aufgabe: Verteilen Sie sie in Geschäften, Schulen, Arztpraxen und am Kirchenschaukasten. Erstellen Sie ein Facebook-Event, informieren Sie die Lokalpresse.
+              </p>
+              <p class="text-text-light leading-relaxed">
+                Der wichtigste Kanal bleibt die persönliche Einladung durch Gemeindemitglieder an Nachbarn, Kollegen und Freunde.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Schritt 4 -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-bg-alt">
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0">4</div>
+            <div>
+              <h3 class="text-xl font-bold font-[family-name:var(--font-heading)] text-primary mb-2">Den Konzertabend erleben</h3>
+              <p class="text-text-light leading-relaxed mb-3">
+                Am Konzerttag kommt der Adonia-Bus am Nachmittag. Die Jugendlichen bauen die Technik auf, machen Soundcheck und bereiten sich vor. Sie kümmern sich um das Abendessen für ca. 70 Personen und das Empfangsteam.
+              </p>
+              <p class="text-text-light leading-relaxed">
+                Abends erleben Ihre Besucher ein professionelles Musical mit Chor, Live-Band und Schauspiel – ein unvergesslicher Abend für die ganze Gemeinde.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Schritt 5 -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-bg-alt">
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0">5</div>
+            <div>
+              <h3 class="text-xl font-bold font-[family-name:var(--font-heading)] text-primary mb-2">Kontakte nachfassen</h3>
+              <p class="text-text-light leading-relaxed mb-3">
+                Sammeln Sie am Konzertabend Kontaktdaten interessierter Besucher. Laden Sie neue Gesichter in der folgenden Woche zu einem niedrigschwelligen Angebot ein – ein Gemeindefrühstück, ein Café-Nachmittag oder ein offener Abend.
+              </p>
+              <p class="text-text-light leading-relaxed">
+                Veröffentlichen Sie Fotos auf Social Media und im Gemeindebrief. Das Konzert ist der Türöffner – die Beziehungsarbeit beginnt danach.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vergleichstabelle -->
+  <section class="py-16 sm:py-20 bg-bg">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold font-[family-name:var(--font-heading)] text-primary mb-8 text-center">
+        Was Sie bereitstellen – was Adonia mitbringt
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-bg-alt">
+          <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+            <span class="text-2xl">🏠</span> Sie stellen bereit
+          </h3>
+          <ul class="space-y-3 text-text-light">
+            <li class="flex items-start gap-2"><span class="text-secondary mt-1">&#10003;</span> Konzertraum (350+ Plätze, Bühne ca. 10x7m)</li>
+            <li class="flex items-start gap-2"><span class="text-secondary mt-1">&#10003;</span> Abendessen für ca. 70 Personen</li>
+            <li class="flex items-start gap-2"><span class="text-secondary mt-1">&#10003;</span> 30–35 Gastfamilien (bei Teens-Konzerten)</li>
+            <li class="flex items-start gap-2"><span class="text-secondary mt-1">&#10003;</span> Lokale Werbung (Plakate aufhängen, Flyer verteilen)</li>
+            <li class="flex items-start gap-2"><span class="text-secondary mt-1">&#10003;</span> Empfangsteam am Konzertabend</li>
+          </ul>
+        </div>
+        <div class="bg-accent/5 rounded-2xl p-6 sm:p-8 border border-accent/20">
+          <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+            <span class="text-2xl">🎵</span> Adonia bringt mit
+          </h3>
+          <ul class="space-y-3 text-text-light">
+            <li class="flex items-start gap-2"><span class="text-accent mt-1">&#10003;</span> Ca. 70 Musiker (Chor, Band, Schauspieler)</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1">&#10003;</span> Komplette Tontechnik und Lichtanlage</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1">&#10003;</span> Professionelles Bühnenprogramm</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1">&#10003;</span> Plakate und Flyer (kostenlos)</li>
+            <li class="flex items-start gap-2"><span class="text-accent mt-1">&#10003;</span> Eigene Kompositionen (keine GEMA-Sorgen)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Für wen geeignet -->
+  <section class="py-16 sm:py-20 bg-bg-alt">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold font-[family-name:var(--font-heading)] text-primary mb-8 text-center">
+        Für welche Gemeinden ist das geeignet?
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {[
+          { icon: '⛪', text: 'Evangelische Landeskirchen' },
+          { icon: '✝️', text: 'Katholische Pfarrgemeinden' },
+          { icon: '🙏', text: 'Freikirchliche Gemeinden' },
+          { icon: '🤝', text: 'Ökumenische Zusammenschlüsse' },
+          { icon: '🏘️', text: 'Kleine Dorfgemeinden (ab 3.000 Einwohner)' },
+          { icon: '🏙️', text: 'Stadtgemeinden jeder Größe' },
+        ].map(({ icon, text }) => (
+          <div class="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm border border-bg-alt">
+            <span class="text-2xl">{icon}</span>
+            <span class="text-text font-medium">{text}</span>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-text-light mt-8 text-lg">
+        Egal ob Ihre Gemeinde 80 oder 800 Mitglieder hat – ein Adonia-Konzert funktioniert überall dort, wo ein Raum und engagierte Menschen vorhanden sind.
+      </p>
+    </div>
+  </section>
+
+  <CTABanner
+    title="Bereit für den ersten Schritt?"
+    text="Die Planung für 2027 beginnt bald. Je früher Sie anfragen, desto besser stehen Ihre Chancen auf einen Wunschtermin."
+    buttonText="Jetzt Kontakt aufnehmen →"
+    buttonHref="/kontakt"
+  />
+</BaseLayout>
