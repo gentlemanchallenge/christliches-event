@@ -10,38 +10,39 @@ interface Props {
 const {
   title = 'Bereit für ein unvergessliches Gemeinde-Event?',
   text = 'Erfahren Sie in 5 Minuten, wie Sie ein kostenloses Musical-Konzert mit 450 Besuchern in Ihre Gemeinde holen.',
-  buttonText = 'So funktioniert\'s',
+  buttonText = 'So funktioniert\'s →',
   buttonHref = '/so-funktionierts',
   variant = 'primary',
 } = Astro.props;
 ---
 
 <section class:list={[
-  'py-24 sm:py-32 relative overflow-hidden',
-  variant === 'primary' ? 'hero-gradient noise-overlay' : 'bg-bg-alt',
+  'py-20 sm:py-24',
+  variant === 'primary' ? 'bg-primary text-white' : 'bg-bg-alt',
 ]}>
-  <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-    {variant === 'primary' && <div class="gold-line mx-auto mb-8"></div>}
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class:list={[
-      'text-3xl sm:text-4xl font-[700] font-[family-name:var(--font-heading)] mb-5 leading-tight',
+      'text-2xl sm:text-3xl lg:text-4xl font-[family-name:var(--font-heading)] font-bold mb-4',
       variant === 'primary' ? 'text-white' : 'text-primary',
     ]}>
       {title}
     </h2>
     <p class:list={[
-      'text-lg mb-10 max-w-xl mx-auto leading-relaxed',
-      variant === 'primary' ? 'text-white/55 font-light' : 'text-text-light',
+      'text-lg mb-8 max-w-xl mx-auto',
+      variant === 'primary' ? 'text-white/70' : 'text-text-light',
     ]}>
       {text}
     </p>
     <a
       href={buttonHref}
       class:list={[
-        variant === 'primary' ? 'btn-primary text-lg px-10 py-4' : 'btn-primary bg-primary hover:bg-primary-light text-lg px-10 py-4 shadow-primary/20 hover:shadow-primary/30',
+        'inline-block px-8 py-3.5 font-semibold rounded-md transition-colors text-lg',
+        variant === 'primary'
+          ? 'bg-secondary hover:bg-secondary-dark text-white'
+          : 'bg-primary hover:bg-primary-light text-white',
       ]}
     >
       {buttonText}
-      <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
     </a>
   </div>
 </section>

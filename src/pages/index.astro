@@ -9,13 +9,13 @@ const websiteJsonLd = {
   "@type": "WebSite",
   "name": "christliches-event.de",
   "url": "https://christliches-event.de",
-  "description": "Ihr unabhängiger Ratgeber für christliche Gemeinde-Events – von der Planung bis zur Durchführung.",
+  "description": "Ihr unabhängiger Ratgeber für christliche Gemeinde-Events.",
 };
 
 const blogPosts = [
   {
     title: "Gemeindefest planen: Die ultimative Checkliste",
-    description: "Gemeindefest organisieren von A-Z – Zeitplan, Budget, Programm-Ideen und Helfer-Koordination.",
+    description: "Von A-Z – Zeitplan, Budget, Programm-Ideen und Helfer-Koordination für Ihr nächstes Gemeindefest.",
     slug: "gemeindefest-planen-checkliste",
     image: "/images/blog/blog-planning-checklist.jpg",
     imageAlt: "Checkliste für Gemeindefest-Planung",
@@ -23,8 +23,8 @@ const blogPosts = [
     tags: ["Gemeindefest", "Checkliste"],
   },
   {
-    title: "Konzert in Kirche organisieren: Komplette Anleitung",
-    description: "Kirchenkonzert planen leicht gemacht – GEMA, Technik, Werbung und die kostenlose Alternative.",
+    title: "Konzert in der Kirche organisieren",
+    description: "Schritt-für-Schritt: GEMA, Technik, Werbung und die kostenlose Alternative für Ihre Gemeinde.",
     slug: "konzert-in-kirche-organisieren",
     image: "/images/blog/blog-music-instruments.jpg",
     imageAlt: "Musikinstrumente in einem Kirchenraum",
@@ -32,8 +32,8 @@ const blogPosts = [
     tags: ["Konzert", "Anleitung"],
   },
   {
-    title: "Warum ein Musical-Event Ihre Gemeinde verändern kann",
-    description: "Wie ein christliches Musical Ihre Gemeinde stärkt – Gemeinschaft fördern, neue Menschen erreichen.",
+    title: "Warum ein Musical-Event Gemeinden verändert",
+    description: "Wie ein christliches Musical Gemeinschaft fördert und neue Menschen in Ihre Gemeinde bringt.",
     slug: "musical-event-gemeinde-veraendert",
     image: "/images/blog/blog-church-community.jpg",
     imageAlt: "Gemeinschaft in der Kirchengemeinde",
@@ -48,179 +48,137 @@ const blogPosts = [
   description="Ihr unabhängiger Ratgeber für christliche Gemeinde-Events. Planen Sie Konzerte, Gemeindefeste und Musical-Abende – mit Praxis-Tipps und der kostenlosen Adonia-Option."
   jsonLd={websiteJsonLd}
 >
-  <!-- ═══ HERO ═══ -->
-  <section class="relative hero-gradient noise-overlay min-h-[90vh] flex items-center overflow-hidden">
-    <!-- Decorative circles -->
-    <div class="absolute top-20 right-[10%] w-72 h-72 rounded-full border border-white/5 animate-pulse" style="animation-duration: 6s;"></div>
-    <div class="absolute bottom-20 left-[5%] w-96 h-96 rounded-full border border-white/[0.03]"></div>
-
-    <div class="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 py-32 sm:py-40">
-      <div class="max-w-2xl" style="animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
-        <div class="gold-line mb-8"></div>
-        <p class="section-label text-secondary/90 mb-5">
-          Ihr Ratgeber für Gemeinde-Events
-        </p>
-        <h1 class="text-4xl sm:text-5xl lg:text-[3.5rem] font-[800] font-[family-name:var(--font-heading)] text-white mb-6 leading-[1.1] tracking-tight">
-          Ein Event, das Ihre Gemeinde
-          <span class="text-secondary italic">nachhaltig verändert</span>
+  <!-- HERO -->
+  <section class="relative bg-primary text-white overflow-hidden">
+    <img
+      src="/images/blog/blog-church-community.jpg"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover opacity-20"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/80"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
+      <div class="max-w-2xl">
+        <p class="text-secondary font-semibold text-sm uppercase tracking-widest mb-4">Ihr Ratgeber für Gemeinde-Events</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-[family-name:var(--font-heading)] font-extrabold leading-tight mb-6">
+          Ein Event, das Ihre Gemeinde nachhaltig verändert
         </h1>
-        <p class="text-lg text-white/60 mb-10 max-w-xl leading-relaxed font-light">
-          Entdecken Sie, wie Kirchengemeinden in ganz Deutschland mit professionellen Musical-Konzerten hunderte Menschen erreichen – kostenlos und ohne großen Aufwand.
+        <p class="text-white/70 text-lg mb-8 leading-relaxed max-w-xl">
+          Erfahren Sie, wie Kirchengemeinden in ganz Deutschland mit professionellen Musical-Konzerten hunderte Menschen erreichen – kostenlos und ohne großen Aufwand.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/so-funktionierts" class="btn-primary">
-            So funktioniert's
-            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/so-funktionierts" class="px-7 py-3.5 bg-secondary hover:bg-secondary-dark text-white font-semibold rounded-md transition-colors text-center">
+            So funktioniert's &rarr;
           </a>
-          <a href="/blog" class="btn-ghost">
+          <a href="/blog" class="px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-md transition-colors text-center border border-white/20">
             Ratgeber lesen
           </a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Floating stats on the right (desktop only) -->
-      <div class="hidden xl:block absolute right-8 top-1/2 -translate-y-1/2" style="animation: fadeIn 1.2s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;">
-        <div class="space-y-4">
-          <div class="bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-2xl px-6 py-5 text-center">
-            <div class="text-3xl font-[800] text-secondary font-[family-name:var(--font-heading)]">254+</div>
-            <div class="text-white/50 text-sm mt-1">Konzerte / Jahr</div>
-          </div>
-          <div class="bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-2xl px-6 py-5 text-center">
-            <div class="text-3xl font-[800] text-secondary font-[family-name:var(--font-heading)]">450</div>
-            <div class="text-white/50 text-sm mt-1">Besucher &empty;</div>
-          </div>
-          <div class="bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-2xl px-6 py-5 text-center">
-            <div class="text-3xl font-[800] text-secondary font-[family-name:var(--font-heading)]">0 €</div>
-            <div class="text-white/50 text-sm mt-1">Kosten</div>
-          </div>
+  <!-- ZAHLEN -->
+  <section class="bg-white border-b border-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+      <div class="grid grid-cols-3 gap-6 sm:gap-12 text-center">
+        <div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-secondary font-[family-name:var(--font-heading)]">254+</div>
+          <p class="text-text-muted text-sm mt-1">Konzerte pro Jahr</p>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-secondary font-[family-name:var(--font-heading)]">450</div>
+          <p class="text-text-muted text-sm mt-1">Besucher im Schnitt</p>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-secondary font-[family-name:var(--font-heading)]">0 €</div>
+          <p class="text-text-muted text-sm mt-1">Kosten für Gemeinden</p>
         </div>
       </div>
     </div>
-
-    <!-- Bottom fade -->
-    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bg to-transparent z-10"></div>
   </section>
 
-  <!-- ═══ PAIN POINTS ═══ -->
-  <section class="py-24 sm:py-32 bg-bg relative">
-    <div class="max-w-6xl mx-auto px-5 sm:px-8">
-      <div class="text-center mb-16 animate-on-scroll">
-        <p class="section-label mb-4">Das Problem</p>
-        <h2 class="text-3xl sm:text-4xl font-[700] font-[family-name:var(--font-heading)] text-primary mb-5">
-          Kennen Sie das auch?
+  <!-- PROBLEME -->
+  <section class="py-20 sm:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-secondary font-semibold text-sm uppercase tracking-widest mb-3">Das kennen viele Gemeinden</p>
+        <h2 class="text-3xl sm:text-4xl font-[family-name:var(--font-heading)] font-bold">
+          Drei Herausforderungen, eine Lösung
         </h2>
-        <p class="text-text-light text-lg max-w-xl mx-auto">
-          Viele Gemeinden stehen vor denselben Herausforderungen.
-        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
-          {
-            num: '01',
-            title: 'Leere Bänke, wenig Resonanz',
-            text: 'Der Gottesdienst erreicht die Kerngemeinde, aber neue Menschen finden selten den Weg zu Ihnen. Die Gemeinde wird kleiner statt größer.',
-          },
-          {
-            num: '02',
-            title: 'Knappes Budget, großer Aufwand',
-            text: 'Ein professionelles Event scheint unbezahlbar. Und wer soll das alles organisieren? Die wenigen Ehrenamtlichen sind bereits am Limit.',
-          },
-          {
-            num: '03',
-            title: 'Junge Menschen fehlen',
-            text: 'Die Jugendgruppe schrumpft, Konfirmanden verschwinden nach der Konfirmation. Wie erreicht man eine Generation, die mit Kirche wenig anfangen kann?',
-          },
-        ].map(({ num, title, text }) => (
-          <div class="group relative bg-white rounded-2xl p-8 border border-border/50 card-hover">
-            <span class="text-5xl font-[800] font-[family-name:var(--font-heading)] text-bg-alt group-hover:text-secondary/20 transition-colors duration-500 absolute top-6 right-6">{num}</span>
-            <div class="relative">
-              <h3 class="text-xl font-[600] font-[family-name:var(--font-heading)] text-primary mb-3 mt-4">{title}</h3>
-              <p class="text-text-light leading-relaxed">{text}</p>
-            </div>
+          { title: 'Wenig neue Gesichter', text: 'Der Gottesdienst erreicht die Kerngemeinde, aber darüber hinaus finden kaum neue Menschen den Weg zu Ihnen.' },
+          { title: 'Knappes Budget', text: 'Professionelle Events scheinen unbezahlbar – und die wenigen Ehrenamtlichen sind schon mit dem Tagesgeschäft ausgelastet.' },
+          { title: 'Jugend fehlt', text: 'Die Jugendgruppe schrumpft, Konfirmanden verschwinden danach. Wie erreicht man eine Generation, die mit Kirche wenig anfangen kann?' },
+        ].map(({ title, text }) => (
+          <div class="bg-white border border-border rounded-lg p-7">
+            <h3 class="text-lg font-[family-name:var(--font-heading)] font-bold text-primary mb-2">{title}</h3>
+            <p class="text-text-light leading-relaxed">{text}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ═══ SOLUTION ═══ -->
-  <section class="py-24 sm:py-32 bg-bg-alt relative overflow-hidden">
-    <!-- Subtle background pattern -->
-    <div class="absolute inset-0 opacity-[0.015]" style="background-image: radial-gradient(var(--color-primary) 1px, transparent 1px); background-size: 24px 24px;"></div>
-
-    <div class="relative max-w-6xl mx-auto px-5 sm:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-        <div class="lg:col-span-5 animate-on-scroll">
-          <p class="section-label mb-4">Die Lösung</p>
-          <div class="gold-line mb-6"></div>
-          <h2 class="text-3xl sm:text-4xl font-[700] font-[family-name:var(--font-heading)] text-primary mb-6 leading-tight">
-            Ein professionelles Musical-Konzert – <span class="text-secondary italic">kostenlos</span> in Ihrer Gemeinde
+  <!-- LÖSUNG -->
+  <section class="py-20 sm:py-24 bg-bg-alt">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div>
+          <p class="text-secondary font-semibold text-sm uppercase tracking-widest mb-3">Die Lösung</p>
+          <h2 class="text-3xl sm:text-4xl font-[family-name:var(--font-heading)] font-bold mb-6 leading-tight">
+            Ein professionelles Musical-Konzert – kostenlos in Ihrer Gemeinde
           </h2>
-          <p class="text-text-light text-lg mb-8 leading-relaxed">
-            450 Menschen in Ihrem Gemeindesaal. 70 junge Musiker auf der Bühne. Ein abendfüllendes biblisches Musical. Der Eintritt ist frei – und für Sie fallen keine Kosten an.
+          <p class="text-text-light text-lg leading-relaxed mb-6">
+            Stellen Sie sich vor: 450 Menschen in Ihrem Gemeindesaal. 70 junge Musiker auf der Bühne. Ein abendfüllendes biblisches Musical mit Chor, Live-Band und Theater.
           </p>
-          <a href="/so-funktionierts" class="btn-primary">
-            Erfahren Sie wie
-            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          <p class="text-text-light text-lg leading-relaxed mb-8">
+            Der Eintritt ist frei – und für Sie als Veranstalter fallen keine Kosten an. Das ist Realität in über 250 Gemeinden jedes Jahr.
+          </p>
+          <a href="/so-funktionierts" class="inline-flex items-center gap-2 text-accent hover:text-accent-dark font-semibold transition-colors">
+            Erfahren Sie, wie es funktioniert &rarr;
           </a>
         </div>
 
-        <div class="lg:col-span-7 animate-on-scroll">
-          <div class="bg-white rounded-2xl border border-border/50 overflow-hidden shadow-lg shadow-primary/[0.03]">
-            <div class="px-8 py-5 border-b border-border/30 bg-primary/[0.02]">
-              <span class="text-sm font-semibold text-primary">In 5 Schritten zum Konzert</span>
-            </div>
-            <div class="p-8 space-y-7">
-              {[
-                { step: '01', title: 'Anfrage stellen', desc: 'Kontaktieren Sie Adonia mit Ihrem Wunschtermin.' },
-                { step: '02', title: 'Raum & Gastfamilien', desc: 'Raum mit 350+ Plätzen und Gastfamilien bereitstellen.' },
-                { step: '03', title: 'Werbung verteilen', desc: 'Adonia liefert Plakate – Sie verteilen sie im Ort.' },
-                { step: '04', title: 'Konzertabend erleben', desc: '70 Musiker, professionelle Technik, begeisterte Besucher.' },
-                { step: '05', title: 'Kontakte nachfassen', desc: 'Neue Gesichter zu Folgeangeboten einladen.' },
-              ].map(({ step, title, desc }, i) => (
-                <div class="flex items-start gap-5 group">
-                  <div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                    <span class="text-secondary text-sm font-bold group-hover:text-white transition-colors">{step}</span>
-                  </div>
-                  <div class="pt-0.5">
-                    <h4 class="font-semibold text-primary text-[0.95rem] mb-0.5">{title}</h4>
-                    <p class="text-text-light text-sm">{desc}</p>
-                  </div>
+        <div class="bg-white border border-border rounded-lg overflow-hidden">
+          <div class="px-6 py-4 bg-primary text-white text-sm font-semibold">
+            In 5 Schritten zum Konzert
+          </div>
+          <div class="p-6 space-y-5">
+            {[
+              { n: '1', title: 'Anfrage stellen', text: 'Kontaktieren Sie Adonia mit Ihrem Wunschtermin.' },
+              { n: '2', title: 'Raum & Gastfamilien organisieren', text: 'Raum mit 350+ Plätzen und Gastfamilien bereitstellen.' },
+              { n: '3', title: 'Werbung verteilen', text: 'Adonia liefert Plakate und Flyer – Sie verteilen sie.' },
+              { n: '4', title: 'Konzertabend erleben', text: '70 Musiker, professionelle Technik, begeisterte Besucher.' },
+              { n: '5', title: 'Kontakte nachfassen', text: 'Neue Gesichter zu Folgeangeboten einladen.' },
+            ].map(({ n, title, text }) => (
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-full bg-secondary/10 text-secondary text-sm font-bold flex items-center justify-center shrink-0 mt-0.5">{n}</div>
+                <div>
+                  <h4 class="font-semibold text-primary text-[0.95rem]">{title}</h4>
+                  <p class="text-text-light text-sm">{text}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ SOCIAL PROOF / STATS ═══ -->
-  <section class="py-24 sm:py-32 bg-bg">
-    <div class="max-w-6xl mx-auto px-5 sm:px-8">
-      <!-- Stats (mobile visible too) -->
-      <div class="grid grid-cols-3 gap-4 sm:gap-8 mb-20 xl:hidden animate-on-scroll">
-        {[
-          { value: '254+', label: 'Konzerte pro Jahr' },
-          { value: '450', label: 'Besucher im Schnitt' },
-          { value: '0 €', label: 'Kosten für Sie' },
-        ].map(({ value, label }) => (
-          <div class="text-center py-6 sm:py-8 rounded-2xl bg-white border border-border/50">
-            <div class="text-2xl sm:text-4xl font-[800] text-secondary font-[family-name:var(--font-heading)]">{value}</div>
-            <p class="text-text-muted text-xs sm:text-sm mt-1">{label}</p>
-          </div>
-        ))}
-      </div>
-
-      <div class="text-center mb-14 animate-on-scroll">
-        <p class="section-label mb-4">Stimmen aus Gemeinden</p>
-        <h2 class="text-3xl sm:text-4xl font-[700] font-[family-name:var(--font-heading)] text-primary">
+  <!-- TESTIMONIALS -->
+  <section class="py-20 sm:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-secondary font-semibold text-sm uppercase tracking-widest mb-3">Erfahrungen</p>
+        <h2 class="text-3xl sm:text-4xl font-[family-name:var(--font-heading)] font-bold">
           Das sagen Veranstalter
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-children">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <TestimonialCard
           quote="520 Besucher in unserer Turnhalle – mehr als bei jedem anderen Event in der Geschichte unserer Gemeinde."
           author="Pastor M."
@@ -240,23 +198,22 @@ const blogPosts = [
     </div>
   </section>
 
-  <!-- ═══ BLOG TEASER ═══ -->
-  <section class="py-24 sm:py-32 bg-bg-alt">
-    <div class="max-w-6xl mx-auto px-5 sm:px-8">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14 animate-on-scroll">
+  <!-- BLOG TEASER -->
+  <section class="py-20 sm:py-24 bg-bg-alt">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
         <div>
-          <p class="section-label mb-4">Wissen & Praxis</p>
-          <h2 class="text-3xl sm:text-4xl font-[700] font-[family-name:var(--font-heading)] text-primary">
+          <p class="text-secondary font-semibold text-sm uppercase tracking-widest mb-3">Wissen & Praxis</p>
+          <h2 class="text-3xl sm:text-4xl font-[family-name:var(--font-heading)] font-bold">
             Ratgeber für Ihre Gemeinde
           </h2>
         </div>
-        <a href="/blog" class="text-accent hover:text-accent-dark font-semibold text-sm flex items-center gap-1 transition-colors shrink-0">
-          Alle Artikel
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        <a href="/blog" class="text-accent hover:text-accent-dark font-semibold text-sm transition-colors">
+          Alle Artikel &rarr;
         </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 stagger-children">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {blogPosts.map((post) => (
           <BlogPostCard {...post} />
         ))}
@@ -264,6 +221,5 @@ const blogPosts = [
     </div>
   </section>
 
-  <!-- ═══ CTA ═══ -->
   <CTABanner />
 </BaseLayout>
