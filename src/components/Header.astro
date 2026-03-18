@@ -4,40 +4,43 @@ const currentPath = Astro.url.pathname;
 const navItems = [
   { href: '/', label: 'Start' },
   { href: '/so-funktionierts', label: 'So funktioniert\'s' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/blog', label: 'Ratgeber' },
   { href: '/faq', label: 'FAQ' },
   { href: '/kontakt', label: 'Kontakt' },
 ];
 ---
 
-<header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 sm:h-20">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+  <nav class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="flex items-center justify-between h-20">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group">
-        <span class="text-xl sm:text-2xl font-bold font-[family-name:var(--font-heading)] text-primary group-hover:text-primary-light transition-colors">
-          christliches-event<span class="text-secondary">.de</span>
+      <a href="/" class="flex items-center gap-2 group relative z-10">
+        <span class="text-xl font-bold font-[family-name:var(--font-heading)] tracking-tight">
+          <span class="header-text-primary transition-colors duration-300">christliches</span><span class="header-text-secondary transition-colors duration-300">-event</span><span class="header-text-muted transition-colors duration-300 text-sm">.de</span>
         </span>
       </a>
 
       <!-- Desktop Nav -->
-      <div class="hidden md:flex items-center gap-1">
+      <div class="hidden lg:flex items-center gap-0.5">
         {navItems.map(({ href, label }) => (
           <a
             href={href}
             class:list={[
-              'px-4 py-2 rounded-lg text-base font-medium transition-colors',
+              'relative px-4 py-2 text-[0.9rem] font-medium transition-colors duration-300',
               currentPath === href || (href !== '/' && currentPath.startsWith(href))
-                ? 'text-primary bg-bg-alt'
-                : 'text-text-light hover:text-primary hover:bg-bg-alt/50',
+                ? 'nav-link-active'
+                : 'nav-link',
             ]}
           >
             {label}
+            {(currentPath === href || (href !== '/' && currentPath.startsWith(href))) && (
+              <span class="absolute bottom-0 left-4 right-4 h-[2px] bg-secondary rounded-full" />
+            )}
           </a>
         ))}
         <a
           href="/kontakt"
-          class="ml-3 px-5 py-2.5 bg-secondary hover:bg-secondary-dark text-white font-semibold rounded-lg transition-colors text-base"
+          class="ml-6 px-5 py-2.5 bg-secondary hover:bg-secondary-dark text-white text-[0.9rem] font-semibold rounded-lg transition-all duration-300 hover:-translate-y-0.5 shadow-sm hover:shadow-md"
         >
           Konzert anfragen
         </a>
@@ -46,24 +49,25 @@ const navItems = [
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-btn"
-        class="md:hidden p-2 rounded-lg text-text-light hover:text-primary hover:bg-bg-alt transition-colors"
+        class="lg:hidden p-2.5 rounded-lg transition-colors duration-300 nav-link relative z-10"
         aria-label="Menü öffnen"
         aria-expanded="false"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path id="menu-open" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          <path id="menu-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
 
     <!-- Mobile Nav -->
-    <div id="mobile-menu" class="hidden md:hidden pb-4">
-      <div class="flex flex-col gap-1">
+    <div id="mobile-menu" class="hidden lg:hidden pb-6">
+      <div class="flex flex-col gap-1 pt-2 border-t border-border/30">
         {navItems.map(({ href, label }) => (
           <a
             href={href}
             class:list={[
-              'px-4 py-3 rounded-lg text-base font-medium transition-colors',
+              'px-4 py-3 rounded-lg text-[0.95rem] font-medium transition-colors duration-200',
               currentPath === href || (href !== '/' && currentPath.startsWith(href))
                 ? 'text-primary bg-bg-alt'
                 : 'text-text-light hover:text-primary hover:bg-bg-alt/50',
@@ -74,7 +78,7 @@ const navItems = [
         ))}
         <a
           href="/kontakt"
-          class="mt-2 px-5 py-3 bg-secondary hover:bg-secondary-dark text-white font-semibold rounded-lg transition-colors text-center text-base"
+          class="mt-3 px-5 py-3 bg-secondary hover:bg-secondary-dark text-white font-semibold rounded-lg transition-colors text-center"
         >
           Konzert anfragen
         </a>
@@ -83,12 +87,73 @@ const navItems = [
   </nav>
 </header>
 
+<!-- Spacer to prevent content jumping -->
+<div class="h-20"></div>
+
+<style>
+  /* Initial state: transparent header */
+  #site-header {
+    background: transparent;
+  }
+
+  #site-header .header-text-primary { color: white; }
+  #site-header .header-text-secondary { color: var(--color-secondary); }
+  #site-header .header-text-muted { color: rgba(255,255,255,0.5); }
+  #site-header .nav-link { color: rgba(255,255,255,0.75); }
+  #site-header .nav-link:hover { color: white; }
+  #site-header .nav-link-active { color: white; }
+
+  /* Scrolled state: solid background */
+  #site-header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+  }
+
+  #site-header.scrolled .header-text-primary { color: var(--color-primary); }
+  #site-header.scrolled .header-text-secondary { color: var(--color-secondary); }
+  #site-header.scrolled .header-text-muted { color: var(--color-text-muted); }
+  #site-header.scrolled .nav-link { color: var(--color-text-light); }
+  #site-header.scrolled .nav-link:hover { color: var(--color-primary); }
+  #site-header.scrolled .nav-link-active { color: var(--color-primary); }
+</style>
+
 <script>
+  const header = document.getElementById('site-header');
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
+  const menuOpen = document.getElementById('menu-open');
+  const menuClose = document.getElementById('menu-close');
+
+  // Scroll handler
+  const onScroll = () => {
+    if (window.scrollY > 40) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu
   btn?.addEventListener('click', () => {
     const isOpen = !menu?.classList.contains('hidden');
     menu?.classList.toggle('hidden');
+    menuOpen?.classList.toggle('hidden');
+    menuClose?.classList.toggle('hidden');
     btn.setAttribute('aria-expanded', String(!isOpen));
+    if (!isOpen) header?.classList.add('scrolled');
   });
+
+  // Scroll reveal observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.animate-on-scroll, .stagger-children').forEach(el => observer.observe(el));
 </script>

@@ -15,7 +15,6 @@ interface Props {
 }
 
 const { frontmatter } = Astro.props;
-const slug = Astro.url.pathname.replace('/blog/', '').replace(/\/$/, '');
 
 const articleJsonLd = {
   "@context": "https://schema.org",
@@ -48,41 +47,54 @@ const articleJsonLd = {
   }}
   jsonLd={articleJsonLd}
 >
-  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-    <div class="mb-6">
-      <Breadcrumbs items={[
-        { label: 'Blog', href: '/blog' },
-        { label: frontmatter.title },
-      ]} />
-    </div>
+  <!-- Hero -->
+  <section class="hero-gradient noise-overlay pt-32 pb-16 sm:pb-20">
+    <div class="relative z-10 max-w-4xl mx-auto px-5 sm:px-8">
+      <div class="mb-6">
+        <Breadcrumbs items={[
+          { label: 'Ratgeber', href: '/blog' },
+          { label: frontmatter.title },
+        ]} />
+      </div>
 
-    <header class="mb-8 sm:mb-12">
-      <div class="flex flex-wrap gap-2 mb-4">
+      <div class="flex flex-wrap gap-2 mb-5">
         {frontmatter.tags.map((tag) => (
-          <span class="px-3 py-1 bg-bg-alt text-text-light text-sm rounded-full">{tag}</span>
+          <span class="px-3 py-1 bg-white/[0.08] text-white/60 text-xs font-medium rounded-full border border-white/10">{tag}</span>
         ))}
       </div>
-      <p class="text-sm text-text-light">
-        Veröffentlicht am {new Date(frontmatter.pubDate).toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' })}
+
+      <h1 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-[700] font-[family-name:var(--font-heading)] text-white leading-[1.15] mb-4">
+        {frontmatter.title}
+      </h1>
+
+      <p class="text-white/40 text-sm">
+        {new Date(frontmatter.pubDate).toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' })}
         &middot; {frontmatter.author}
       </p>
-    </header>
+    </div>
+  </section>
 
+  <article class="max-w-4xl mx-auto px-5 sm:px-8 py-12 sm:py-16">
     <div class="prose max-w-none">
       <slot />
     </div>
 
-    <footer class="mt-12 pt-8 border-t border-bg-alt">
-      <div class="bg-bg-alt rounded-2xl p-6 sm:p-8 text-center">
-        <h3 class="text-xl sm:text-2xl font-bold font-[family-name:var(--font-heading)] text-primary mb-3">
-          Bereit für ein unvergessliches Gemeinde-Event?
-        </h3>
-        <p class="text-text-light mb-5 max-w-xl mx-auto">
-          Erfahren Sie, wie Sie kostenlos ein professionelles Musical-Konzert in Ihre Gemeinde holen.
-        </p>
-        <a href="/so-funktionierts" class="inline-block px-6 py-3 bg-secondary hover:bg-secondary-dark text-white font-semibold rounded-lg transition-colors">
-          So funktioniert's &rarr;
-        </a>
+    <footer class="mt-16 pt-10 border-t border-border">
+      <div class="relative bg-bg-alt rounded-2xl p-8 sm:p-10 overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-secondary-light to-secondary"></div>
+        <div class="text-center">
+          <p class="section-label mb-3">Nächster Schritt</p>
+          <h3 class="text-2xl sm:text-3xl font-[700] font-[family-name:var(--font-heading)] text-primary mb-4">
+            Bereit für ein unvergessliches Gemeinde-Event?
+          </h3>
+          <p class="text-text-light mb-7 max-w-lg mx-auto">
+            Erfahren Sie, wie Sie kostenlos ein professionelles Musical-Konzert in Ihre Gemeinde holen.
+          </p>
+          <a href="/so-funktionierts" class="btn-primary">
+            So funktioniert's
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
       </div>
     </footer>
   </article>

@@ -2,57 +2,58 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-primary text-white/80">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+<footer class="bg-primary-dark text-white/50 relative overflow-hidden">
+  <!-- Subtle pattern -->
+  <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+  <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-16 pb-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-14">
       <!-- Brand -->
       <div class="sm:col-span-2 lg:col-span-1">
-        <a href="/" class="text-xl font-bold font-[family-name:var(--font-heading)] text-white">
-          christliches-event<span class="text-secondary">.de</span>
+        <a href="/" class="inline-block text-lg font-bold font-[family-name:var(--font-heading)] text-white tracking-tight">
+          christliches<span class="text-secondary">-event</span><span class="text-white/30 text-sm">.de</span>
         </a>
-        <p class="mt-3 text-sm text-white/60 leading-relaxed">
+        <p class="mt-3 text-sm leading-relaxed text-white/35">
           Ihr unabhängiger Ratgeber für christliche Gemeinde-Events. Wir helfen Kirchengemeinden, unvergessliche Veranstaltungen zu planen.
         </p>
       </div>
 
       <!-- Navigation -->
       <div>
-        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Navigation</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/" class="hover:text-white transition-colors">Startseite</a></li>
-          <li><a href="/so-funktionierts" class="hover:text-white transition-colors">So funktioniert's</a></li>
-          <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
-          <li><a href="/faq" class="hover:text-white transition-colors">FAQ</a></li>
-          <li><a href="/kontakt" class="hover:text-white transition-colors">Kontakt</a></li>
+        <h3 class="text-white/80 font-semibold mb-4 text-xs uppercase tracking-[0.15em]">Navigation</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="/" class="hover:text-white transition-colors duration-200">Startseite</a></li>
+          <li><a href="/so-funktionierts" class="hover:text-white transition-colors duration-200">So funktioniert's</a></li>
+          <li><a href="/blog" class="hover:text-white transition-colors duration-200">Ratgeber</a></li>
+          <li><a href="/faq" class="hover:text-white transition-colors duration-200">FAQ</a></li>
+          <li><a href="/kontakt" class="hover:text-white transition-colors duration-200">Kontakt</a></li>
         </ul>
       </div>
 
       <!-- Blog -->
       <div>
-        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Beliebte Artikel</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/blog/gemeindefest-planen-checkliste" class="hover:text-white transition-colors">Gemeindefest planen</a></li>
-          <li><a href="/blog/konzert-in-kirche-organisieren" class="hover:text-white transition-colors">Konzert organisieren</a></li>
-          <li><a href="/blog/gema-regeln-kirchengemeinden" class="hover:text-white transition-colors">GEMA-Regeln</a></li>
-          <li><a href="/blog/junge-menschen-gemeinde-erreichen" class="hover:text-white transition-colors">Junge Menschen erreichen</a></li>
+        <h3 class="text-white/80 font-semibold mb-4 text-xs uppercase tracking-[0.15em]">Beliebte Artikel</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="/blog/gemeindefest-planen-checkliste" class="hover:text-white transition-colors duration-200">Gemeindefest planen</a></li>
+          <li><a href="/blog/konzert-in-kirche-organisieren" class="hover:text-white transition-colors duration-200">Konzert organisieren</a></li>
+          <li><a href="/blog/gema-regeln-kirchengemeinden" class="hover:text-white transition-colors duration-200">GEMA-Regeln</a></li>
+          <li><a href="/blog/junge-menschen-gemeinde-erreichen" class="hover:text-white transition-colors duration-200">Junge Menschen erreichen</a></li>
         </ul>
       </div>
 
       <!-- Legal -->
       <div>
-        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Rechtliches</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/impressum" class="hover:text-white transition-colors">Impressum</a></li>
-          <li><a href="/datenschutz" class="hover:text-white transition-colors">Datenschutz</a></li>
+        <h3 class="text-white/80 font-semibold mb-4 text-xs uppercase tracking-[0.15em]">Rechtliches</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="/impressum" class="hover:text-white transition-colors duration-200">Impressum</a></li>
+          <li><a href="/datenschutz" class="hover:text-white transition-colors duration-200">Datenschutz</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-white/40">
+    <div class="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/25">
       <p>&copy; {currentYear} christliches-event.de</p>
-      <p>
-        Ein unabhängiges Projekt zur Unterstützung christlicher Gemeinden.
-      </p>
+      <p>Ein unabhängiges Projekt zur Unterstützung christlicher Gemeinden.</p>
     </div>
   </div>
 </footer>

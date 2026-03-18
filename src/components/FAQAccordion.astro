@@ -11,13 +11,13 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<div class="space-y-3">
-  {items.map((item) => (
-    <details class="bg-white rounded-xl border border-bg-alt overflow-hidden group">
-      <summary class="flex items-center justify-between gap-4 p-5 sm:p-6 font-semibold text-primary text-base sm:text-lg cursor-pointer hover:bg-bg-alt/30 transition-colors">
-        <span class="flex-1">{item.question}</span>
+<div class="divide-y-0">
+  {items.map((item, i) => (
+    <details class="group py-1">
+      <summary class="flex items-center justify-between gap-4 py-5 sm:py-6 text-primary text-base sm:text-[1.05rem] cursor-pointer hover:text-accent transition-colors duration-200">
+        <span class="flex-1 font-semibold leading-snug pr-4">{item.question}</span>
       </summary>
-      <div class="px-5 sm:px-6 pb-5 sm:pb-6 text-text-light leading-relaxed">
+      <div class="pb-6 text-text-light leading-relaxed text-[0.95rem] pl-0 sm:pl-0">
         <Fragment set:html={item.answer} />
       </div>
     </details>

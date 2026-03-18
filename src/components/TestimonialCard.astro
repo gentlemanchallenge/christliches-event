@@ -8,16 +8,23 @@ interface Props {
 const { quote, author, role } = Astro.props;
 ---
 
-<blockquote class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-bg-alt">
-  <div class="text-secondary text-4xl leading-none mb-3">&ldquo;</div>
-  <p class="text-text leading-relaxed mb-4 italic">{quote}</p>
-  <footer class="flex items-center gap-3">
-    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-sm">
+<blockquote class="relative bg-white rounded-2xl p-7 sm:p-8 border border-border/50 card-hover">
+  <!-- Quote mark -->
+  <div class="absolute -top-3 left-7 w-8 h-8 bg-secondary rounded-lg flex items-center justify-center">
+    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/>
+    </svg>
+  </div>
+
+  <p class="text-text leading-relaxed mt-4 mb-6 italic text-[0.95rem]">{quote}</p>
+
+  <footer class="flex items-center gap-3 pt-5 border-t border-border/30">
+    <div class="w-9 h-9 bg-primary/5 rounded-full flex items-center justify-center text-primary font-bold text-xs">
       {author.split(' ').map(n => n[0]).join('')}
     </div>
     <div>
-      <cite class="not-italic font-semibold text-primary text-sm">{author}</cite>
-      <p class="text-text-light text-xs">{role}</p>
+      <cite class="not-italic font-semibold text-primary text-sm block">{author}</cite>
+      <span class="text-text-muted text-xs">{role}</span>
     </div>
   </footer>
 </blockquote>

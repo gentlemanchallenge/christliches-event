@@ -12,30 +12,32 @@ interface Props {
 const { title, description, slug, image, imageAlt, pubDate, tags } = Astro.props;
 ---
 
-<article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 border border-bg-alt group">
+<article class="group bg-white rounded-2xl overflow-hidden border border-border/50 card-hover">
   <a href={`/blog/${slug}`} class="block">
-    <div class="aspect-[16/9] overflow-hidden bg-bg-alt">
+    <div class="aspect-[16/10] overflow-hidden bg-bg-alt relative">
       <img
         src={image}
         alt={imageAlt}
-        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
         loading="lazy"
       />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
     </div>
-    <div class="p-5 sm:p-6">
+    <div class="p-6">
       {tags && tags.length > 0 && (
-        <div class="flex flex-wrap gap-1.5 mb-3">
+        <div class="flex flex-wrap gap-2 mb-3">
           {tags.slice(0, 2).map((tag) => (
-            <span class="px-2 py-0.5 bg-bg-alt text-text-light text-xs rounded-full">{tag}</span>
+            <span class="px-2.5 py-0.5 bg-bg-alt text-text-muted text-xs font-medium rounded-full">{tag}</span>
           ))}
         </div>
       )}
-      <h3 class="text-lg sm:text-xl font-bold font-[family-name:var(--font-heading)] text-primary mb-2 group-hover:text-accent transition-colors line-clamp-2">
+      <h3 class="text-lg font-[600] font-[family-name:var(--font-heading)] text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-snug">
         {title}
       </h3>
-      <p class="text-text-light text-sm leading-relaxed line-clamp-3 mb-3">{description}</p>
-      <span class="text-accent font-medium text-sm">
-        Weiterlesen &rarr;
+      <p class="text-text-light text-sm leading-relaxed line-clamp-2 mb-4">{description}</p>
+      <span class="inline-flex items-center text-accent font-medium text-sm gap-1 group-hover:gap-2 transition-all duration-300">
+        Weiterlesen
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </span>
     </div>
   </a>
